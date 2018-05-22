@@ -1,0 +1,17 @@
+{
+  "name": "4slv/helper",
+  "description": "helper functions",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Alexey Dobrynin",
+      "email": "a.dobrynin@4slovo.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Slov\\Helper\\": ""
+    }
+  }
+}
