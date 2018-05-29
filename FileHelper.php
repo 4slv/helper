@@ -1,7 +1,9 @@
 <?php
 namespace Slov\Helper;
+
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+
 class FileHelper
 {
     /** Удаление папки со всем её содержимым
@@ -26,6 +28,7 @@ class FileHelper
         }
         rmdir($directoryPath);
     }
+    
     /** Создать директорию рекурсивно если её не существует
      * @param string $directoryPath путь к создаваемой папке
      */
@@ -39,6 +42,7 @@ class FileHelper
             );
         }
     }
+    
     /** Пересоздать директорию (удалить и создать новую)
      * @param string $directoryPath путь к создаваемой папке
      */
