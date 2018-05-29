@@ -1,7 +1,9 @@
 <?php
 namespace Slov\Helper;
+
 class StringHelper
 {
+    
     /** Замена в строке шаблонов на значения
      * @param string $string стоока с шаблонами
      * @param array $replace ассоциативный массив вида: шаблон => значение
@@ -14,6 +16,7 @@ class StringHelper
             $string
         );
     }
+    
     /**
      * @param string $text текст
      * @return string текст с заглавной первой буквой
@@ -30,6 +33,7 @@ class StringHelper
         mb_internal_encoding($encoding);
         return $result;
     }
+    
     /** перевод строки из camelCase в snake_case
      * @param string $camelCase строка в camelCase
      * @return string строка в snake_case */
@@ -42,6 +46,7 @@ class StringHelper
         }
         return implode('_', $ret);
     }
+    
     /** перевод строки из camelCase в SCREAMING_SNAKE_CASE
      * @param string $camelCase строка в camelCase
      * @return string строка в SCREAMING_SNAKE_CASE */
