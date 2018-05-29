@@ -1,7 +1,9 @@
 <?php
 namespace Slov\Helper;
+
 class ArrayHelper
 {
+    
     /** Преобразовать иерархический массив в плоский
      * @param array $tree иерархический массив
      * @param string $separator разделитель узлов
@@ -16,6 +18,7 @@ class ArrayHelper
         }
         return $flat;
     }
+    
     /** Преобразовать многомерный массива в матрицу
      * @param array $tree многомерный массив
      * @param string[] $treePath путь к массиву
@@ -39,6 +42,7 @@ class ArrayHelper
         }
         return $matrix;
     }
+    
     /**
      * @param array $array массив
      * @return bool true - если массив является списком
@@ -49,6 +53,7 @@ class ArrayHelper
         $listKeys = range(0, count($array) - 1);
         return $isEmptyArray ||  array_keys($array) ===  $listKeys;
     }
+    
     /**
      * @param array $array массив
      * @return bool true - если ассоциативный массив с ключами-датами
