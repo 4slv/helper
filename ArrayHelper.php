@@ -79,4 +79,19 @@ class ArrayHelper
         }
         return true;
     }
+    
+    /**
+     * @param array $array массив с snake_case ключами 
+     * @return array массив с camelCase ключами
+     */
+    public static function keysSnakeCaseToCamelCase($array)
+    {
+        $result = [];
+        foreach($array as $snakeCaseKey => $value)
+        {
+            $camelCaseKey = StringHelper::snakeCaseToCamelCase($snakeCaseKey);
+            $result[$camelCaseKey] = $value;
+        }
+        return $result;
+    }
 }
