@@ -54,4 +54,14 @@ class StringHelper
     {
         return strtoupper(self::camelCaseToSnakeCase($camelCase));
     }
+    
+    /** перевод строки из snake_case в camelCase
+     * @param string $snakeCase строка в snake_case
+     * @return string строка в camelCase */
+    public static function snakeCaseToCamelCase($snakeCase)
+    {
+        $snakeCaseCapitalisedWords = ucwords($snakeCase, '_');
+        $capitalizedCamelCase = str_replace('_', '', $snakeCaseCapitalisedWords);
+        return lcfirst($capitalizedCamelCase);
+    }
 }
