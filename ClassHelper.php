@@ -73,7 +73,7 @@ class ClassHelper
      * @param string $fullClassName полное имя класса (с неймспейсом)
      * @return string название класса (без неймспейса)
      */
-    function shortName($fullClassName)
+    public static function shortName($fullClassName)
     {
         $classPathParts = explode('\\', $fullClassName);
         return array_pop($classPathParts);
