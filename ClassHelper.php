@@ -50,4 +50,22 @@ class ClassHelper
 
         } catch (ReflectionException $exception) {}
     }
+    
+    /** Получение комментария параметра класса
+     * @param mixed $object объект класса
+     * @param string $parameterName название параметра
+     * @return string комментарий параметра */
+    public static function getClassParameterComment($object, string $parameterName)
+    {
+        $reflection = new ReflectionClass($object);
+        preg_match(
+            '/\/\*\*\s+@var\s+[^\s]*\s+([^\*]*)/',
+            $reflection->getProperty($parameterName)->getDocComment(),
+            $match
+        );
+        if (isset($match[1]) && !empty($match[1])) {
+            return $match[1];
+        }
+        return null;
+    }
 }
