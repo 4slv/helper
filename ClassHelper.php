@@ -68,4 +68,14 @@ class ClassHelper
         }
         return null;
     }
+    
+    /**
+     * @param string $fullClassName полное имя класса (с неймспейсом)
+     * @return string название класса (без неймспейса)
+     */
+    function shortName($fullClassName)
+    {
+        $classPathParts = explode('\\', $fullClassName);
+        return array_pop($classPathParts);
+    }
 }
