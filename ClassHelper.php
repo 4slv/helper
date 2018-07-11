@@ -82,7 +82,7 @@ class ClassHelper
 
     /** Получение комментария константы
      * @param mixed $classInstance имя или экземпляр класса
-     * @param mixed $constName имя константы
+     * @param string $constName имя константы
      * @return string комментарий константы */
     public static function getConstComment($classInstance, $constName)
     {
