@@ -66,18 +66,18 @@ class ArrayHelper
                     '/^(\d{4})\-(\d{1,2})\-(\d{1,2})$/',
                     $key,
                     $date
-                ) === 0
-                ||
+                ) === 1
+                and
                 checkdate(
                     (int) $date[2],
                     (int) $date[3],
                     (int) $date[1]
-                ) === false
+                ) === true
             ){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
     
     /**
