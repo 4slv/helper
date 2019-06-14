@@ -4,6 +4,7 @@ namespace Slov\Helper;
 
 use ReflectionClass;
 use ReflectionException;
+use ReflectionClassConstant;
 
 /** Хелпер для работы с классами */
 class ClassHelper
@@ -77,5 +78,26 @@ class ClassHelper
     {
         $classPathParts = explode('\\', $fullClassName);
         return array_pop($classPathParts);
+    }
+
+    /** Получение комментария константы
+     * @param mixed $classInstance имя или экземпляр класса
+     * @param string $constName имя константы
+     * @return string комментарий константы */
+    public static function getConstComment($classInstance, $constName)
+    {
+        try {
+            $reflectionClassConstant = new ReflectionClassConstant($classInstance, $constName);
+            $constComment = $reflectionClassConstant->getDocComment();
+            if(
+            preg_match(
+                '/\/\*\*\s*(.+?)\s*\*\//msi',
+                $constComment,
+                $commentMatch
+            )
+            ){
+                return $commentMatch[1];
+            }
+        } catch (ReflectionException $exception) {}
     }
 }
